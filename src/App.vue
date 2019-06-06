@@ -7,6 +7,7 @@
       <span @click="changeComponent('LuckyWheelContainer')">转盘</span>
       <span @click="changeComponent('PosterContainer')">海报</span>
       <span @click="changeComponent('SkuContainer')">sku</span>
+      <span @click="changeComponent('CanvasContainer')">canvas</span>
     </div>
 
     <div class="container">
@@ -22,6 +23,7 @@ import VerticalScrollContainer from './components/VerticalScrollContainer'
 import LuckyWheelContainer from './components/LuckyWheelContainer'
 import PosterContainer from './components/PosterContainer'
 import SkuContainer from './components/SkuContainer'
+import CanvasContainer from './components/CanvasContainer'
 
 export default {
   name: 'App',
@@ -31,7 +33,8 @@ export default {
     VerticalScrollContainer,
     LuckyWheelContainer,
     PosterContainer,
-    SkuContainer
+    SkuContainer,
+    CanvasContainer
   },
   data () {
     return {
