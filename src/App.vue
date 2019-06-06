@@ -1,28 +1,56 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="operator">
+      <span @click="changeComponent('CountDownContainer')">倒计时</span>
+      <span @click="changeComponent('BarrageContainer')">弹幕</span>
+      <span @click="changeComponent('VerticalScrollContainer')">垂直滚动</span>
+      <span @click="changeComponent('LuckyWheelContainer')">转盘</span>
+      <span @click="changeComponent('PosterContainer')">海报</span>
+      <span @click="changeComponent('SkuContainer')">sku</span>
+    </div>
+
+    <div class="container">
+      <component v-bind:is="currentComponent"></component>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CountDownContainer from './components/CountDownContainer'
+import BarrageContainer from './components/BarrageContainer'
+import VerticalScrollContainer from './components/VerticalScrollContainer'
+import LuckyWheelContainer from './components/LuckyWheelContainer'
+import PosterContainer from './components/PosterContainer'
+import SkuContainer from './components/SkuContainer'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    HelloWorld
+    CountDownContainer,
+    BarrageContainer,
+    VerticalScrollContainer,
+    LuckyWheelContainer,
+    PosterContainer,
+    SkuContainer
+  },
+  data () {
+    return {
+      currentComponent: ''
+    }
+  },
+  methods: {
+    changeComponent (name) {
+      this.currentComponent = name
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  margin: 0;
+}
+span {
+  padding-right: 10px;
 }
 </style>
